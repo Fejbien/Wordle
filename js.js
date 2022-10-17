@@ -1,6 +1,9 @@
 var wordToGuess = getWordToGuess();
 var won = false;
 
+const rowLettersCap = 5;
+const rowsCap = 6;
+
 var currentRow = 0;
 var currentCell = 0;
 
@@ -19,24 +22,34 @@ let gray = [];
 
 var wordsCheck = JSON.parse(dataCheck)[0];
 
-function getWordToGuess(){
-    var words = JSON.parse(dataRandom)[0];
-    let word = words[Math.floor(Math.random() * Object.keys(words[0]).length)];
-    console.log(word);
-    return word;
-}
+document.addEventListener('keyup', e => {
+    if(e.key == "Enter"){
+        rowManager("enter");
+    }
+    else if(e.key == "Backspace"){
+        rowManager("back");
+    }
+    else if(e.key.toUpperCase() != e.key.toLowerCase()){
+        rowManager(e.key.toLowerCase());
+    }
+})
 
 function keyClicked(key){
-    let char = String(key.getAttribute("data-key"));
+    char = String(key.getAttribute("data-key"));
+    rowManager(char);
+}
+
+function rowManager(c){
+    let char = c;
 
     if(won) return null;
-    if(currentRow > 5) return null;
+    if(currentRow > rowsCap - 1) return null;
 
     if(char.length > 1){
-        if(char.length == 5)
+        if(char.length == 5) // enter
             enterClicked();
 
-        if(char.length == 4)
+        if(char.length == 4) // back
             backClicked();
     }
     else if (char.length == 1){
@@ -44,8 +57,15 @@ function keyClicked(key){
     }
 }
 
+function getWordToGuess(){
+    var words = JSON.parse(dataRandom)[0];
+    let word = words[Math.floor(Math.random() * Object.keys(words).length)];
+    console.log(word);
+    return word;
+}
+
 function writeLetter(char){
-    if(currentCell >= 5)
+    if(currentCell >= rowLettersCap)
         return null;
 
     cells = getCurrentCells()
@@ -55,7 +75,7 @@ function writeLetter(char){
 }
 
 function enterClicked(){
-    if(currentCell < 5)
+    if(currentCell < rowLettersCap)
         return null;
 
     let cells = getCurrentCells();
@@ -83,13 +103,16 @@ function markRow(word){
         if(wordToGuess[i] == word[i]){
             green.push(word[i]);
             cells[i].style.backgroundColor = colorGreen;
+            cells[i].style.borderColor = colorGreen;
         }
         else if (wordToGuess.includes(word[i])){
             cells[i].style.backgroundColor = colorYellow;
+            cells[i].style.borderColor = colorYellow;
         }
         else{
             gray.push(word[i]);
             cells[i].style.backgroundColor = colorGray;
+            cells[i].style.borderColor = colorGray;
         }
     }
 }
