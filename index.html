@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORDLS CLONE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="board" id="board">
+        <div class="boardRow" id="row0">
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+        </div>
+        <div class="boardRow" id="row1">
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+        </div>
+        <div class="boardRow" id="row2">
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+        </div>
+        <div class="boardRow" id="row3">
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+        </div>
+        <div class="boardRow" id="row4">
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+        </div>
+        <div class="boardRow" id="row5">
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+            <div class="boardCell" id="cell"></div>
+        </div>
+    </div>
+
+    <div class="keyboard" id="keyboard" >
+        <div class="keyboardRow">
+            <button type="button" id="q" data-key="q" onclick="keyClicked(this)">Q</button>
+            <button type="button" id="w" data-key="w" onclick="keyClicked(this)">W</button>
+            <button type="button" id="e" data-key="e" onclick="keyClicked(this)">E</button>
+            <button type="button" id="r" data-key="r" onclick="keyClicked(this)">R</button>
+            <button type="button" id="t" data-key="t" onclick="keyClicked(this)">T</button>
+            <button type="button" id="y" data-key="y" onclick="keyClicked(this)">Y</button>
+            <button type="button" id="u" data-key="u" onclick="keyClicked(this)">U</button>
+            <button type="button" id="i" data-key="i" onclick="keyClicked(this)">I</button>
+            <button type="button" id="o" data-key="o" onclick="keyClicked(this)">O</button>
+            <button type="button" id="p" data-key="p" onclick="keyClicked(this)">P</button>
+        </div>
+        <div class="keyboardRow">
+            <button type="button" id="a" data-key="a" onclick="keyClicked(this)">A</button>
+            <button type="button" id="s" data-key="s" onclick="keyClicked(this)">S</button>
+            <button type="button" id="d" data-key="d" onclick="keyClicked(this)">D</button>
+            <button type="button" id="f" data-key="f" onclick="keyClicked(this)">F</button>
+            <button type="button" id="g" data-key="g" onclick="keyClicked(this)">G</button>
+            <button type="button" id="h" data-key="h" onclick="keyClicked(this)">H</button>
+            <button type="button" id="j" data-key="j" onclick="keyClicked(this)">J</button>
+            <button type="button" id="k" data-key="k" onclick="keyClicked(this)">K</button>
+            <button type="button" id="l" data-key="l" onclick="keyClicked(this)">L</button>
+        </div>
+        <div class="keyboardRow">
+            <button type="button" id="enter" data-key="enter" onclick="keyClicked(this)">ENTER</button>
+            <button type="button" id="z" data-key="z" onclick="keyClicked(this)">Z</button>
+            <button type="button" id="x" data-key="x" onclick="keyClicked(this)">X</button>
+            <button type="button" id="c" data-key="c" onclick="keyClicked(this)">C</button>
+            <button type="button" id="v" data-key="v" onclick="keyClicked(this)">V</button>
+            <button type="button" id="b" data-key="b" onclick="keyClicked(this)">B</button>
+            <button type="button" id="n" data-key="n"n onclick="keyClicked(this)">N</button>
+            <button type="button" id="m" data-key="m" onclick="keyClicked(this)">M</button>
+            <button type="button" id="back" data-key="back" onclick="keyClicked(this)">←</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="wordle5.json"></script>
+    <script type="text/javascript" src="wordle5Check.json"></script>
+    <script src="js.js"></script>
+</body>
+</html>

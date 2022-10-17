@@ -1,0 +1,65 @@
+*{
+    font-family: Arial;
+}
+
+body{
+    background-color: #121213;
+    margin: 0px;
+}
+
+.board{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.boardRow{
+    display: flex;
+    flex-direction: row;
+}
+
+.boardCell{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    border: 1px solid #3a3a3c;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    margin: 5px;
+
+    
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 40px;
+    color: white;
+}
+
+.keyboard{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyboardRow{
+    color: white;
+}
+
+.keyboardRow button{
+    font-size: larger;
+    margin: 4px 1px 4px 1px;
+    padding: 15px 20px 15px 20px;
+    border: 1px solid #818384;
+    border-radius: 5px;
+    color: white;
+    background-color: #818384;
+}
+
+.keyboardRow button:focus{
+    border: 1px solid blue;
+}
